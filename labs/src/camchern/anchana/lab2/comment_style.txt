@@ -1,0 +1,16 @@
+CamelCaseNaming
+    - declare variables separately in their own line.
+    - use variables for args. Do not printput args variable directly.
+
+ChangeMachine
+    - separate variable parts with the putput part.
+
+CircleCalculator
+    - indentation. line 23.
+    - only one tab (4 spaces) line 27.
+
+Patient
+    - use variables for args. Do not printput args variable directly.
+
+PrimitiveDataType
+    - Variable names!!!!!
