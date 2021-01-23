@@ -20,29 +20,31 @@ package camchern.anchana.lab3;
 import java.util.Scanner;
 
 public class GuessNumberGameV2 {
-    static int correctNum;
-    static int minNum = 1, maxNum = 10; //min and max number
-    static int Tries, guess;
+    static int CorrectNum;
+    static int MinNum = 1, MaxNum = 10; //min and max number
+    static int Tries, Guess;
     public static void main(String[] args) { // there are two subroutine
         genGame();
         playGame();
     }
     public static void genGame() { // to random a answer
-        correctNum = minNum + (int) (Math.random()) * ((maxNum - minNum) + 1); // random the answer
+        CorrectNum = MinNum + (int) (Math.random()* (MaxNum - MinNum) + 1); // random the answer
     }
     public static void playGame() { //to play a game
+
         for(Tries = 2; Tries >= 0;  Tries--) {
-            Scanner user = new Scanner(System.in);
-            System.out.println("Please enter a guess number(1-10): ");
-            guess = user.nextInt();
-            if (correctNum== guess) {
+            Scanner User = new Scanner(System.in);
+            System.out.printf("Please enter a guess number(1-10): ");
+            Guess = User.nextInt();
+
+            if (CorrectNum == Guess) {
                 System.out.println("Congratulations ! That's correct");
                 break; // stop when a guess number is a same as a answer
-            } else if (correctNum> guess) {
-                System.out.println("Please type a higher number! ");
+            } else if (CorrectNum > Guess) {
+                System.out.printf("Please type a higher number! ");
                 System.out.println("Number of remaining tries : " +Tries);
-            } else if (correctNum < guess) {
-                System.out.println("Please type a lower number! ");
+            } else if (CorrectNum < Guess) {
+                System.out.printf("Please type a lower number! ");
                 System.out.println("Number of remaining tries : " +Tries);
             }
         }

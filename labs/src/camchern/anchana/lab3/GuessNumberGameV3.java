@@ -26,9 +26,9 @@ package camchern.anchana.lab3;
 import java.util.Scanner;
 
 public class GuessNumberGameV3 {
-    static int correctNum;
-    static int minNum, maxNum;
-    static int maxTriers;
+    static int CorrectNum;
+    static int MinNum, MaxNum;
+    static int MaxTriers;
     public static void main(String[] args) {
         configGame();
         genGame();
@@ -36,44 +36,60 @@ public class GuessNumberGameV3 {
     }
     public static void configGame() {
         System.out.printf("Please enter the min and max value : " );
-        Scanner userNumber = new Scanner(System.in);
-        minNum = userNumber.nextInt();
-        maxNum = userNumber.nextInt();
+        Scanner UserNumber = new Scanner(System.in);
+        MinNum = UserNumber.nextInt();
+        MaxNum = UserNumber.nextInt();
+
+        if (MinNum > MaxNum) {
+            int NumberValue = MinNum;
+            MinNum = MaxNum;
+            MaxNum = NumberValue;
+        }
+
 
         System.out.printf("Pleas enter the number of tries : ");
-        maxTriers = userNumber.nextInt();
+        MaxTriers = UserNumber.nextInt();
 
     }
     public static void genGame() {
-        correctNum = minNum + (int) (Math.random()) * ((maxNum - minNum) + 1);
+
+        CorrectNum = MinNum + (int) (Math.random() * (MaxNum - MinNum) + 1);
     }
-    public static void playGames() {
+    public static void playGame() {
         Scanner user = new Scanner(System.in);
-        int reTries;
-        for (reTries = maxTriers; reTries >= 1; reTries--) {
+        int ReTries;
+
+        for (ReTries = MaxTriers; ReTries >= 1; ReTries--) {
             System.out.print("Please enter a guess number: " );
-            int guess = user.nextInt();
-            if (guess > maxNum || guess < minNum) {
-                System.out.println("The guess number much be in the range "  + (+ minNum + " and " + maxNum));
-                reTries = reTries+1;
-            } else if (correctNum == guess) {
+            int Guess = user.nextInt();
+            if (Guess > MaxNum || Guess < MinNum) {
+                System.out.println("The guess number much be in the range "  + (+ MinNum + " and " + MaxNum));
+                ReTries = ReTries+1;
+            } else if (CorrectNum == Guess) {
                 System.out.println("Congratulations ! That's correct");
                 break;
-            } else if (correctNum > guess) {
-                System.out.println("Please type a higher number! ");
-                System.out.println("Number of remaining tries : " + (reTries-1) );
-            } else if (correctNum < guess) {
-                System.out.println("Please type a lower number! ");
-                System.out.println("Number of remaining tries : " + (reTries-1));
+            } else if (CorrectNum > Guess) {
+                System.out.printf("Please type a higher number! ");
+                System.out.println("Number of remaining tries : " + (ReTries-1) );
+            } else if (CorrectNum < Guess) {
+                System.out.printf("Please type a lower number! ");
+                System.out.println("Number of remaining tries : " + (ReTries-1));
             }
         }
-        System.out.print("If you want to play again? type 'y' to continue or 'q' to quit : "); //  ask the user to type 'y' ( to continuous) or 'q' (to quit the program)
-        String ContinueOrQuit = user.next();
-        if (ContinueOrQuit.equals("y")) { // if yhe user type 'y' the program will continuous and run again
-            genGame();
-            playGames();
-        } else  if (ContinueOrQuit.equals("q")) { // if the user type 'q' the program will close
-            System.exit(0); // leave the program
+    }
+    public static void playGames() {
+        playGame();
+
+        while (true) {
+            Scanner User = new Scanner(System.in);
+            System.out.print("If you want to play again? type 'y' to continue or 'q' to quit : "); //  ask the user to type 'y' ( to continuous) or 'q' (to quit the program)
+            String ContinueOrQuit = User.next();
+            if (ContinueOrQuit.equals("y")) { // if the user type 'y' the program will continuous and run again
+                genGame();
+                playGame();
+            } else if (ContinueOrQuit.equals("q")) { // if the user type 'q' the program will close
+                System.exit(0); // leave the program
+            }
         }
     }
 }

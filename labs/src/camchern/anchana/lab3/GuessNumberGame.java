@@ -21,22 +21,24 @@ import java.util.Scanner; // import scanner
 
 public class GuessNumberGame {
     public static void main(String[] args) {
-        int minNum = 1; // set a type  and value of variables
-        int maxNum = 10;
-        int answerNumber = minNum + (int) (Math.random()) * ((maxNum - minNum) + 1); // random a answer
-        int guessNumber;
+        int MinNum = 1; // set a type  and value of variables
+        int MaxNum = 10;
+        int AnswerNumber = MinNum + (int) (Math.random() * (MaxNum - MinNum) + 1); // random a answer
+        int GuessNumber;
         int Tries;
+
         for (Tries = 2; Tries >= 0;  Tries--) {
             Scanner user = new Scanner(System.in); // accept a
             System.out.printf("Please enter a guess number(1-10): "); // ask user to  input a guess number
-            guessNumber = user.nextInt();
-            if (answerNumber == guessNumber) {
+            GuessNumber = user.nextInt();
+
+            if (AnswerNumber == GuessNumber) {
                 System.out.println("Congratulations ! That's correct"); //when the guess number is same the answer
                 break; // stop or exit the program.
-            } else if (answerNumber > guessNumber) {
+            } else if (AnswerNumber > GuessNumber) {
                 System.out.println("Please type a higher number! "); // when the guess number is less than the answer
-                System.out.printf("Number of remaining tries : " +Tries); // show a remaining tries
-            } else if (answerNumber < guessNumber) {
+                System.out.println("Number of remaining tries : " +Tries); // show a remaining tries
+            } else if ( AnswerNumber < GuessNumber ) {
                 System.out.printf("Please type a lower number! "); // when the guess number is more than the answer
                 System.out.println("Number of remaining tries : " +Tries); // show a remaining tries
             }
