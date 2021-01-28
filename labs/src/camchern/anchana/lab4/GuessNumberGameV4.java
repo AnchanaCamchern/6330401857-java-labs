@@ -1,4 +1,18 @@
 package camchern.anchana.lab4;
+/**
+ * This is GuessNumberGameV4 program.
+ * GuessNumberGameV4 is same  as GuessNumberGameV3 program.
+ * The user cam set minimum and maximum number and number of tries to play a game.
+ * Method showGuesses() and showSpecific() will be called in method playGames().
+ * After the game ends, the user can type in ‘a’ in order to list all the user’s guesses
+ * Also after the game ends, the user can type in ‘g’ to see the guess at a particular play.
+ *
+ * Autor : Anchana  Camchern
+ * Student ID : 633040185-7
+ * Section 2
+ * Date 28th January 2021
+ *
+ */
 import java.util.Scanner;
 
 public class GuessNumberGameV4 {
@@ -15,8 +29,8 @@ public class GuessNumberGameV4 {
         playGames();
     }
 
-    public static void showGuess() {
-        for (int i = 0; i < maxTriers ; i++) {
+    public static void showGuess() { // method to show a guess number
+        for (int i = 0 ; i < guesses.length ; i++) {
             int numberShow = guesses[i];
                 System.out.printf(numberShow + " ");
             }
@@ -37,13 +51,13 @@ public class GuessNumberGameV4 {
 
     }
 
-    public static void configGame() {
+    public static void configGame() { //accept a minimum and maximum number from the user
         Scanner userNumber = new Scanner(System.in);
         System.out.printf("Please enter the min and max value : ");
         minNum = userNumber.nextInt();
         maxNum = userNumber.nextInt();
 
-        if (minNum > maxNum) {
+        if (minNum > maxNum) { // loop to find minimum and maximum number
             int number = minNum;
             minNum = maxNum;
             maxNum = number;
@@ -53,17 +67,17 @@ public class GuessNumberGameV4 {
         maxTriers = userNumber.nextInt();
     }
 
-    public static void genAnswer() {
+    public static void genAnswer() { // random the answer
 
         correctNum = minNum + (int)(Math.random() * (double)(maxNum - minNum) + 1);
     }
 
-    public static void playGame() {
+    public static void playGame() { // run the game
         Scanner user = new Scanner(System.in);
         guesses = new int[maxTriers];
         numGuesses = 0;
 
-        for(int reTries = 0; reTries < maxTriers; reTries++) {
+        for(int reTries = 0 ; reTries < maxTriers ; reTries++) {
             System.out.printf("Please enter a guess number(" + minNum + "-" + maxNum + "): ");
             int guess = user.nextInt();
 
@@ -89,8 +103,8 @@ public class GuessNumberGameV4 {
         }
     }
 
-    public static void playGames() {
-        playGame();
+    public static void playGames() { // ask user to play again
+        playGame(); // call playGame() method
 
         while(true) {
             Scanner user = new Scanner(System.in);
@@ -98,14 +112,14 @@ public class GuessNumberGameV4 {
             System.out.println("Type 'a' to see all your guesses or type 'g' to see on a specific play. ");
             String nextStep = user.next();
 
-            if (nextStep.equals("y")) {
+            if (nextStep.equals("y")) { //type y to play again
                 genAnswer();
                 playGame();
-            } else if (nextStep.equals("q")) {
+            } else if (nextStep.equals("q")) { // type q to exit the program
                 System.exit(0);
-            } else if (nextStep.equals("a")) {
+            } else if (nextStep.equals("a")) { // type a to see a guess number
                 showGuess();
-            } else if (nextStep.equals("g")) {
+            } else if (nextStep.equals("g")) { //type g to see a specific number that user want
                 showSpecific();
             }
         }
