@@ -1,7 +1,7 @@
-//package camchern.anchana.lab4;
+package camchern.anchana.lab4;
 /**
  * This is StudentGPA program
- * The user can input year, term,  name_course, credit, and grad to find aGPA
+ * The user can input year, term,  name_course, credit, and grad to find a GPA
  * When the program end, the user can Type in
  *      'o' to see all courses,
  *      'a' for accumulated GPA,
@@ -14,7 +14,6 @@
  * Date 28th January 2021
  *
  */
-
 import java.util.Scanner;
 
 public class StudentGPA {
@@ -68,34 +67,82 @@ public class StudentGPA {
     }
 
     public static void specific() {
+        double gradeNumber = 0;
+        double sumPoints = 0;
+        double totalCredits = 0;
+
         Scanner inputTermYear = new Scanner(System.in);
-        int year = inputTermYear.nextInt();
-        int term = inputTermYear.nextInt();
-        for (int i = 0 ; i < numberOfCourses ; i++) {
-            System.out.println(year + " " + term);
+        int yearInput = inputTermYear.nextInt();
+        int termInput = inputTermYear.nextInt();
+
+        for (int i = 0; i < numberOfCourses ; i++) {
+            if (grade[i].equals("A")) {
+                gradeNumber = 4;
+            } else if (grade[i].equals("B+")) {
+                gradeNumber = 3.5;
+            } else if (grade[i].equals("B")) {
+                gradeNumber = 3;
+            } else if (grade[i].equals("C+")) {
+                gradeNumber = 2.5;
+            } else if (grade[i].equals("C")) {
+                gradeNumber = 2;
+            } else if (grade[i].equals("D+")) {
+                gradeNumber = 1.5;
+            } else if (grade[i].equals("D")) {
+                gradeNumber = 1;
+            } else if (grade[i].equals("F")) {
+                gradeNumber = 0;
+            }
+
+            if (year[i] == yearInput && term[i] == termInput) {
+                sumPoints += (int) courseCredit[i] * ((int) gradeNumber);
+                totalCredits += courseCredit[i];
+            }
         }
-        System.out.println();
+        double accumulated = sumPoints / totalCredits;
+        System.out.println("Accumulated GPA is " + " " + accumulated);
     }
 
     public static void accumulatedGPA() {
+        double gradeNumber = 0;
+        double sumPoints = 0;
+        double totalCredits = 0;
 
-        for ( int i = 0; i < MAX_NUMBER_OF_COURSES ; i++){
+        for (int i = 0 ; i < numberOfCourses ; i++) {
+            if(grade[i].equals("A")) {
+                gradeNumber = 4;
+            }else if (grade[i].equals("B+")) {
+                gradeNumber = 3.5;
+            }else if (grade[i].equals("B")) {
+                gradeNumber = 3;
+            }else if (grade[i].equals("C+")) {
+                gradeNumber = 2.5;
+            }else if (grade[i].equals("C")) {
+                gradeNumber = 2;
+            }else if (grade[i].equals("D+")) {
+                gradeNumber = 1.5;
+            }else if (grade[i].equals("D")) {
+                gradeNumber = 1;
+            }else if (grade[i].equals("F")) {
+                gradeNumber = 0;
+            }
+
+        }for(int i = 0; i < numberOfCourses ; ++i) {
+
+            sumPoints += courseCredit[i] * (int) gradeNumber;
+            totalCredits += courseCredit[i];
         }
-        System.out.println(grade);
-
-
-
-
-
+        double accumulated = sumPoints / totalCredits;
+        System.out.println("Accumulated GPA is " + " " + accumulated);
     }
 
     public static void showGPA() {
 
         while (true) {
-        System.out.println("Type in 'o' to see all courses, 'a' for accumulated GPA, " +
-                " 't' for GPA for specific term or 'q' to exit ");
-        Scanner userSelect = new  Scanner(System.in);
-        String nextStep = userSelect.next();
+            System.out.println("Type in 'o' to see all courses, 'a' for accumulated GPA, " +
+                    " 't' for GPA for specific term or 'q' to exit ");
+            Scanner userSelect = new  Scanner(System.in);
+            String nextStep = userSelect.next();
 
             if (nextStep.equals("o")) {
                 System.out.println("year  term  name_course  credit  grade");
@@ -114,3 +161,4 @@ public class StudentGPA {
         }
     }
 }
+
