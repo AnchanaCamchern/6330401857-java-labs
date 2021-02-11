@@ -128,13 +128,13 @@ public class StudentGPA {
             }
 
         }for(int i = 0; i < numberOfCourses ; ++i) {
-
-            sumPoints += courseCredit[i] * (int) gradeNumber;
+            sumPoints += (int) courseCredit[i] * ((int) gradeNumber);
             totalCredits += courseCredit[i];
         }
         double accumulated = sumPoints / totalCredits;
         System.out.println("Accumulated GPA is " + " " + accumulated);
     }
+
 
     public static void showGPA() {
 

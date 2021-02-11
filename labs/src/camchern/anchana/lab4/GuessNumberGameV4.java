@@ -2,7 +2,7 @@ package camchern.anchana.lab4;
 /**
  * This is GuessNumberGameV4 program.
  * GuessNumberGameV4 is same  as GuessNumberGameV3 program.
- * The user cam set minimum and maximum number and number of tries to play a game.
+ * The user can set minimum and maximum number and number of tries to play a game.
  * Method showGuesses() and showSpecific() will be called in method playGames().
  * After the game ends, the user can type in ‘a’ in order to list all the user’s guesses
  * Also after the game ends, the user can type in ‘g’ to see the guess at a particular play.
@@ -69,7 +69,7 @@ public class GuessNumberGameV4 {
 
     public static void genAnswer() { // random the answer
 
-        correctNum = minNum + (int)(Math.random() * (double)(maxNum - minNum) + 1);
+        correctNum = minNum + (int)(Math.random() * ((maxNum - minNum) + 1));
     }
 
     public static void playGame() { // run the game

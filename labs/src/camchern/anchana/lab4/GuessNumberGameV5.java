@@ -74,7 +74,7 @@ public class GuessNumberGameV5 {
     public static void playGame() {
         Scanner user = new Scanner(System.in);
         guesses = new int[maxTriers];
-        numGuesses = 0;
+       // numGuesses = 0;
 
         for(int reTries = 0 ; reTries < maxTriers ; reTries++) {
             System.out.printf("Please enter a guess number(" + minNum + "-" + maxNum + "): ");
@@ -166,7 +166,7 @@ public class GuessNumberGameV5 {
 
         while(true) {
             Scanner user = new Scanner(System.in);
-            System.out.println("If you want to play again? type 'y' to continue or 'q' to quit : ");
+            System.out.println("If you want to play again? type 'y' to continue or 'q' to quit.");
             System.out.println("Type 'a' to see all your guesses or type 'g' to see on a specific play. ");
             System.out.println("Type 'v' to see average or 'm' to see a minimum or 'x' to see maximum of all your guesses");
             String nextStep = user.next();
