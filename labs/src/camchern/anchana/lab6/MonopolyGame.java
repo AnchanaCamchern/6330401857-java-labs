@@ -27,11 +27,9 @@ class MonopolyGame extends DiceGame implements HasRule, UseDice, UseBoard {
         gameName = "MonopolyGame"; // set the gameName to “Monopoly Game”.
         numOfPlayers = 2; // set numOfPlayers to 2.
 
-
         for(int i = 0; i < numOfPlayers; i++) { // set the value of cash for each player to 1500.
             cash [i] = 1500;
         }
-
         diceRoll = rollDice();
     }
 
@@ -66,6 +64,7 @@ class MonopolyGame extends DiceGame implements HasRule, UseDice, UseBoard {
     public String gameRule() {
         return gameRule();
     } // return rule of game
+
     @Override
     public String toString() { // return string
         return "Game name : " + gameName +

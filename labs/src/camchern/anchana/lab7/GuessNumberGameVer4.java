@@ -10,7 +10,7 @@ public class GuessNumberGameVer4 extends GuessNumberGameVer3 {
     static ArrayList<GuessNumberGameVer4> games = new ArrayList<GuessNumberGameVer4>(0);
 
      GuessNumberGameVer4(int minNum,int maxNum, int maxTries) {
-         this();
+         super(minNum, maxNum,maxTries);
      }
 
 
@@ -28,7 +28,7 @@ public class GuessNumberGameVer4 extends GuessNumberGameVer3 {
     public static void initGamesList() {
          games.add(new GuessNumberGameVer4(1,10,3));
          games.add(new GuessNumberGameVer4(1,10,5));
-         games.add(new GuessNumberGameVer4(1,10,5));
+         games.add(new GuessNumberGameVer4(1,5,5));
 
         System.out.println("Unsorted");
          for (GuessNumberGameVer4 game:games) {
@@ -59,10 +59,9 @@ public class GuessNumberGameVer4 extends GuessNumberGameVer3 {
 
     public static void main(String[] args) {
         testComparingMaxTries();
-        testComparingMaxTriesThenRamDomRange();
+        //testComparingMaxTriesThenRamDomRange();
     }
 }
-
 
 
 

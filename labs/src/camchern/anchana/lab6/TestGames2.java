@@ -16,10 +16,10 @@ public class TestGames2 {
         game1.playGame();
         HighLowGame game2 = new HighLowGame(3);
         System.out.println(game2);
-        game1.playGame();
-        HighLowGame game3 = new HighLowGame(4,"l");
+        game2.playGame();
+        HighLowGame game3 = new HighLowGame(4,"h");
         System.out.println(game3);
-        game1.playGame();
+        game3.playGame();
         MonopolyGame game4 = new MonopolyGame();
         System.out.println(game4);
         game4.playGame();

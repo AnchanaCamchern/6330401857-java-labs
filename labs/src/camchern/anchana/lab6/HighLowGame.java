@@ -3,7 +3,7 @@
  * The user can choose the number of dice to play with.
  * The user can guess l” or “L” for low and “h” or “H” for high in the game.
  * Has one protected variable named numOfDice.
- * Has public getter and setter methods for numofDice.
+ * Has public getter and setter methods for number of dice.
  * Has three constructors include
   - HighLowGame ()
   - HighLowGame(int numOfDice)
@@ -13,8 +13,6 @@
  * Student ID : 633040185-7
  * Section 2
  * Date 4th March 2021
- *
- *
  */
 
 package camchern.anchana.lab6;
@@ -32,37 +30,41 @@ class HighLowGame extends DiceGame implements HasRule, UseDice { // HighLowGame 
     }
 
     public HighLowGame () {   //accepts no argument.
+        this(3,"l"); // set numOfDice  to 3 and set a answer to "l"
         gameName = "High-Low Game"; // set gameName to “High-Low Game”.
         numOfPlayers = 1; // set numOfPlayer to 1.
-        numOfDice = 3; // set numOfDice  to 3.
-        answer = "l"; // set a answer to "l"
         diceRoll = rollDice();
-        MiddleNumber = (numOfDice*6 - numOfDice + 1)/2 + numOfDice - 1; // set a middle number.
+        MiddleNumber = (numOfDice*6 - numOfDice + 1)/2 + numOfDice - 1;  // set a middle number.
+
     }
 
     public HighLowGame(int numOfDice) { //  accepts one int for numOfDice
         gameName = "High-Low Game";
         numOfPlayers = 1;
-        this.numOfDice = numOfDice;
         answer = "l";
+        this.numOfDice = numOfDice;
         diceRoll = rollDice();
-        MiddleNumber = (numOfDice*6 - numOfDice + 1)/2 + numOfDice - 1;
+        MiddleNumber = (numOfDice*6 - numOfDice + 1)/2 + numOfDice - 1;  // set a middle number.
+
     }
 
-    public HighLowGame(int numOfDice, String answer) { // accepts one int for numOfDice and one string for answer
+    public HighLowGame(int numOfDice, String answer) { // accepts one int for numOfDice and one string for answer;
+
         gameName = "High-Low Game";
         numOfPlayers = 1;
         this.numOfDice = numOfDice;
         this.answer = answer;
         diceRoll = rollDice();
-        MiddleNumber = (numOfDice*6 - numOfDice + 1)/2 + numOfDice - 1;
+        MiddleNumber = (numOfDice*6 - numOfDice + 1)/2 + numOfDice - 1;  // set a middle number.
+
     }
 
     @Override
     public void playGame() { // method playGame
+        MiddleNumber = (numOfDice*6 - numOfDice + 1)/2 + numOfDice - 1;  // set a middle number.
 
-        if (diceRoll <= MiddleNumber && (answer.equals("H") || answer.equals("h") )
-                || diceRoll > MiddleNumber && (answer.equals("L") || answer.equals("l"))) {
+        if ((diceRoll < MiddleNumber) && (answer.equals("H") || answer.equals("h") )
+                || (diceRoll >= MiddleNumber) && (answer.equals("L") || answer.equals("l"))) {
             System.out.println("Sorry. You lose.");
         } else {
             System.out.println("Congratulations! You win.");
@@ -73,9 +75,9 @@ class HighLowGame extends DiceGame implements HasRule, UseDice { // HighLowGame 
     public String toString() { // method toString() for return string that outputs the result.
         return "Game name : " + gameName +
                 ", Number of players : " + numOfPlayers +
-                ", Dice roll : " + rollDice +
+                ", Dice roll : " + diceRoll +
                 ", Player's guess : " + answer +
-                ", Number of dice is " + numOfDice ;
+                ", Number of dice is " + numOfDice;
     }
 
     public String gameRule() {
@@ -83,13 +85,13 @@ class HighLowGame extends DiceGame implements HasRule, UseDice { // HighLowGame 
     } // method gameRule() for display a rule of the game.
 
     @Override
-    public int getDiceRoll() {
-        return super.getDiceRoll();
-    }
-
-    @Override
     public int rollDice() {
-        return rollDice;
+        int minnNum = 1;
+        int maxNum = 6;
+        for(int i = 0 ; i < numOfDice ; i++) {
+            diceRoll += (int)(Math.random() * maxNum + minnNum);
+        }
+        return diceRoll;
     } // method rollDice() that will simulate rolling dice for the game
 }
 

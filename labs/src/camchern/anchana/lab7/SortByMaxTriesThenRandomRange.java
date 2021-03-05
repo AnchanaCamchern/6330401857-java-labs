@@ -9,3 +9,4 @@ public class SortByMaxTriesThenRandomRange implements Comparator<GuessNumberGame
         return 0;
     }
 }
+

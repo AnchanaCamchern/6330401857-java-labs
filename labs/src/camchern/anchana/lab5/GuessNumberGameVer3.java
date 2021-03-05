@@ -30,7 +30,7 @@ public class GuessNumberGameVer3 extends GuessNumberGameVer2 {
         super(minNum, maxNum);
     }
 
-    GuessNumberGameVer3(int minNum, int maxNum, int maxTries) {
+    public GuessNumberGameVer3(int minNum, int maxNum, int maxTries) {
         super(minNum, maxNum, maxTries);
     }
 

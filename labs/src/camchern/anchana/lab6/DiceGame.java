@@ -2,7 +2,9 @@
  * This is DiceGame program that's inherited from Game.
  * Dice game is a game where one dice is rolled and a player guesses “l” or “L” for low
    and “h” or “H” for high. The dice is low if it is less than or equal to 3.
-   otherwise it is high. The player wins if he or she guesses low or high correctly
+   otherwise it is high.
+ * If the user's guess is correct program will display "Congratulations! You win."
+ * If the user,s guess is incorrect program will display "Sorry. You lose."
  *
  * Autor : Anchana  Camchern
  * Student ID : 633040185-7
