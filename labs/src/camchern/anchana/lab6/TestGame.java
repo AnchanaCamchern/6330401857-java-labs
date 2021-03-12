@@ -9,7 +9,9 @@
 
 package camchern.anchana.lab6;
 
-public class TestGame {
+import java.util.ArrayList;
+
+public class TestGame extends ArrayList<Game> {
     public static void main(String[] args) {
         DiceGame game1 = new DiceGame();
         System.out.println(game1);
@@ -20,7 +22,6 @@ public class TestGame {
         GuessNumberGame game3 = new GuessNumberGame();
         System.out.println(game3);
         game3.playGame();
-
 
         Game game4;
         game4 = new DiceGame("l");

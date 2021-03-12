@@ -24,4 +24,10 @@ public abstract class Student {
     public void setFavoriteCourse(String favoriteCourse) {
         this.favoriteCourse = favoriteCourse;
     }
+
+    @Override
+    public String toString() {
+        return "Student name "+ name +
+                ", favoriteCourse is " + favoriteCourse;
+    }
 }

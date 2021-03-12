@@ -15,7 +15,7 @@
 
 package camchern.anchana.lab6;
 
-abstract class Game { // Game is a abstract class
+public abstract class Game { // Game is a abstract class
     protected String gameName; // set a variables
     protected int numOfPlayers;
 

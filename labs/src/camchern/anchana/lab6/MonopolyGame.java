@@ -19,7 +19,7 @@
 
 package camchern.anchana.lab6;
 
-class MonopolyGame extends DiceGame implements HasRule, UseDice, UseBoard {
+public class MonopolyGame extends DiceGame implements HasRule, UseDice, UseBoard {
     protected int[] cash = new int[8]; // array cash
     protected final int numOfDice = 2;
 

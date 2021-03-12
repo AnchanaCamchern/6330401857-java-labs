@@ -16,7 +16,7 @@ package camchern.anchana.lab6;
 
 import java.util.Scanner;
 
-class DiceGame extends Game { //inherited from Game.
+public class DiceGame extends Game { //inherited from Game.
     protected  int diceRoll, rollDice; // set a variables
     protected String answer;
 

@@ -17,7 +17,7 @@
 
 package camchern.anchana.lab6;
 
-class HighLowGame extends DiceGame implements HasRule, UseDice { // HighLowGame is inherited from DiceGame
+public class HighLowGame extends DiceGame implements HasRule, UseDice { // HighLowGame is inherited from DiceGame
     protected int numOfDice, MiddleNumber;
     protected String answer;
 
@@ -88,6 +88,7 @@ class HighLowGame extends DiceGame implements HasRule, UseDice { // HighLowGame 
     public int rollDice() {
         int minnNum = 1;
         int maxNum = 6;
+        diceRoll = 0;
         for(int i = 0 ; i < numOfDice ; i++) {
             diceRoll += (int)(Math.random() * maxNum + minnNum);
         }

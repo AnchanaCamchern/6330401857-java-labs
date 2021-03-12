@@ -17,7 +17,7 @@ package camchern.anchana.lab6;
 
 import java.util.Scanner;
 
-class GuessNumberGame extends Game {
+public class GuessNumberGame extends Game {
     protected int minNum; // set a variables
     protected int maxNum;
     protected int correctNum;

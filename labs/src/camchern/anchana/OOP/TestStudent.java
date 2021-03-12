@@ -12,8 +12,7 @@ class TestStudents {
                 "Mobile Application Development"));
         students.add(new ComEnStudent("Piti",
                 "Advanced Computer Programming"));
-
-
+        students.add(new ComEnStudent("Mawa", "Sleep"));
         for (Student student: students) {
             System.out.println(student);
         }
