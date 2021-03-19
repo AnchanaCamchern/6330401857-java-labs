@@ -26,7 +26,8 @@ public class SimpleFormV2 extends SimpleForm {
     languagesPanel.add(java);
     languagesPanel.add(javascript);
 
-    contentPanel.setLayout(new GridLayout(4,2));
+
+    contentPanel.setLayout(new GridLayout(4,2)); // ทำให้ตรง มากกว่า  FlowLayout());
     contentPanel.add(nameLabel);
     contentPanel.add(nameTxt);
     contentPanel.add(addrLabel);
@@ -35,42 +36,57 @@ public class SimpleFormV2 extends SimpleForm {
     contentPanel.add(languagesPanel);
     contentPanel.add(genderLabel);
     contentPanel.add(genderPanel);
+    mainPanel.setLayout(new BorderLayout());
 
-
-    ButtonGroup genderGrd = new ButtonGroup();
+    ButtonGroup genderGrd = new ButtonGroup(); // select only one
     genderGrd.add(male);
     genderGrd.add(female);
     genderGrd.add(other);
-
-    mainPanel.add(contentPanel, BorderLayout.NORTH);
-    mainPanel.add(buttonsPanel, BorderLayout.CENTER);
+    mainPanel.add(contentPanel, BorderLayout.CENTER);
+    mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
     }
 
     public void  initComponents() {
         python = new JCheckBox("Python", true);
         java = new JCheckBox("Java", true);
         javascript = new JCheckBox("Javascript");
+
         languagesPanel = new JPanel();
         languagesLabel = new JLabel("Languages");
+
         male = new JRadioButton("Male");
         female = new JRadioButton("Female", true);
         other = new JRadioButton("Other");
+
         genderPanel = new JPanel();
         genderLabel = new JLabel("Gender");
+
         languagesPanel.add(python);
         languagesPanel.add(java);
         languagesPanel.add(javascript);
+
         genderPanel.add(male);
         genderPanel.add(female);
         genderPanel.add(other);
+
+        mainPanel = (JPanel) this.getContentPane();
+        mainPanel.setLayout(new BorderLayout());
         mainPanel.add(languagesLabel, BorderLayout.AFTER_LAST_LINE);
 
     }
 
+    public void setFrameFeatures() {
+        //  window.add(buttonsPanel);
+        //  window.setContentPane(buttonsPanel);
+        this.pack();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+    }
+
     public static void createAndShoeGUI() {
-        SimpleForm window = new SimpleFormV2("SimpleForm2");
-        window.addComponents();
-        window.setFrameFeatures();
+            SimpleForm window = new SimpleFormV2("SimpleForm2");
+            window.addComponents();
+            window.setFrameFeatures();
     }
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -79,19 +95,4 @@ public class SimpleFormV2 extends SimpleForm {
             }
         });
     }
-/**
-    public class JRadioButton {
-        public void addComponents(Container cp) {
-            cp.setLayout(new GridLayout(2,1));
-            JLabel label = new JLabel("Gender");
-            JPanel gender = new JPanel();
-            JRadioButton male = new JRadioButton("Male",true);
-            JRadioButton female = new JRadioButton("Female");
-            gender.add(male);
-            gender.add(female);
-        cp.add(label);
-        cp.add(gender);
-        }
-    }
- */
 }
