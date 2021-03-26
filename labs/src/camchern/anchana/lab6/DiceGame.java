@@ -22,14 +22,14 @@ public class DiceGame extends Game { //inherited from Game.
 
     public DiceGame() {
         super("Dice Game",1); // reuse code from  class Game
-        rollDice = (int)(Math.random()*6+1); // random number from 1-6 for set rollDice
+        diceRoll = (int)(Math.random()*6+1); // random number from 1-6 for set rollDice
         answer = "l"; // set a answer
     }
 
     public DiceGame(String answer) { // DiceGame
         super("Dice Game", 1);  // reuse code from  class Game
         this.answer = answer; // set a answer
-        rollDice = (int)(Math.random()*6+1); // random number from 1-6 for set rollDice
+        diceRoll = (int)(Math.random()*6+1); // random number from 1-6 for set rollDice
 
     }
 
@@ -49,7 +49,7 @@ public class DiceGame extends Game { //inherited from Game.
     public String toString() { // method toString for return String
         return "Game Name : " + gameName +
                 ", Number of players : " + numOfPlayers +
-                ", Dice roll : "  + rollDice + ", Player's guess : " + answer;
+                ", Dice roll : "  + diceRoll + ", Player's guess : " + answer;
     }
 
     @Override
