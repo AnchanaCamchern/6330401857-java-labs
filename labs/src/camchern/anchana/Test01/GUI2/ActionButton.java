@@ -80,11 +80,10 @@ public class ActionButton extends JFrame implements ActionListener {
         String command = e.getActionCommand();
         if (command.equalsIgnoreCase("CANCEL")){
             nameField.setText(" ");
-        }else  if (command.equalsIgnoreCase("OK")){
+        }else  if (command.equalsIgnoreCase("OK")) {
             name += nameField.getText() + " ";
             nameArea.setText(name);
             nameField.setText(" ");
         }
-        //nameField.setText(" ");
     }
 }

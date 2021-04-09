@@ -1,4 +1,4 @@
-package camchern.anchana.Test01.GUI2;
+package camchern.anchana.Test01.GUI3;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,18 +16,19 @@ public class SimpleFormV3 extends SimpleForm2 {
 
     public void initComponents() {
         super.initComponents();
-        hobbiesLst  = new JList(hobbiesStr);
+        hobbiesLst = new JList(hobbiesStr);
         hobbiesScrollPane = new JScrollPane(hobbiesLst);
         hobbiesLabel = new JLabel("Hobbies:");
         hobbiesPanel = new JPanel();
 
         contentBottomPanel = new JPanel();
     }
+
     public void addComponents() {
         super.addComponents();
         initComponents();
 
-        hobbiesPanel.setLayout(new GridLayout(0,2));
+        hobbiesPanel.setLayout(new GridLayout(0, 2));
         hobbiesPanel.add(hobbiesLabel);
         hobbiesPanel.add(hobbiesScrollPane);
 
@@ -38,7 +39,7 @@ public class SimpleFormV3 extends SimpleForm2 {
     }
 
     public static void createAndShowGUI() {
-        SimpleFormV3 window = new SimpleFormV3("SimpleFormV3");
+        camchern.anchana.Test01.GUI3.SimpleFormV3 window = new camchern.anchana.Test01.GUI3.SimpleFormV3("SimpleFormV3");
         window.addComponents();
         window.setFrameFeatures();
     }
@@ -51,39 +52,3 @@ public class SimpleFormV3 extends SimpleForm2 {
         });
     }
 }
-
-/**public class SimpleFormV3 extends SimpleForm2{
-    protected String hobbiestStr[] = { "Play a game", "Listen s music", "Read a book"};
-    protected JList hobbiesList = new JList(hobbiestStr);
-    hobb
-
-    public SimpleFormV3(String title) {
-        super(title);
-    }
-
-    public void initComponents() {
-        super.initComponents();
-    }
-
-    public void addComponents() {
-        super.addComponents();;
-        JList hobbyList = new JList();
-        JScrollPane scrollPane = new JScrollPane(hobbyList);
-
-    }
-
-    public static void createAndShowGUI() {
-        SimpleFormV3 simpleFormV3 = new SimpleFormV3("SimpleFormV3");
-        simpleFormV3.addComponents();
-        simpleFormV3.setFrameFeatures();
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
-        });
-    }
-}
- */

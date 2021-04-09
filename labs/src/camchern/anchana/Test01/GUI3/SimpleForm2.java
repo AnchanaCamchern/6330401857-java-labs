@@ -1,6 +1,7 @@
-package camchern.anchana.Test01.GUI2;
+package camchern.anchana.Test01.GUI3;
 
 import camchern.anchana.Test01.GUI.SimpleForm;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -91,5 +92,6 @@ public class SimpleForm2 extends SimpleForm {
             }
         });
     }
+
 }
 

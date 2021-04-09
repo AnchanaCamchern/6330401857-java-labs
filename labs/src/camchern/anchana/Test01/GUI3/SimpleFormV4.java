@@ -1,49 +1,44 @@
-package camchern.anchana.Test01.GUI2;
+package camchern.anchana.Test01.GUI3;
 
 import javax.swing.*;
-import java.awt.*;
 
-public class SimpleFormV4 extends SimpleFormV3{
+public class SimpleFormV4 extends SimpleFormV3 {
+    protected  JMenuBar menuBar;
+    protected  JMenu menu;
+    protected  JMenuItem newItem, openItem, quitItem;
     public SimpleFormV4(String title) {
         super(title);
     }
 
-    @Override
-    public void addComponents() {
-        super.addComponents();
-        initComponents();
-    }
-
     public void addMenus() {
-        JMenuBar menuBar = new JMenuBar();
-        JMenu menu = new JMenu("File");
+        menuBar = new JMenuBar();
+        menu = new JMenu("File");
         menuBar.add(menu);
 
-        JMenuItem newItem = new JMenuItem("New", new ImageIcon("Labs\\Icon\\NewIcon.png"));
+        newItem = new JMenuItem("New", new ImageIcon("Labs\\Icon\\NewIcon.png"));
         menu.add(newItem);
 
-        JMenuItem openItem = new JMenuItem("Open", new ImageIcon(
+        openItem = new JMenuItem("Open", new ImageIcon(
                 "Labs\\Icon\\OpenIcon.png"));
         menu.add(openItem);
 
-        JMenuItem quitItem = new JMenuItem("Quit");
+        quitItem = new JMenuItem("Quit");
         menu.add(quitItem);
         this.setJMenuBar(menuBar);
-
-
     }
 
-    public void initComponents() {
-        super.initComponents();
+    public void setFrameFeatures() {
+        this.pack();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void createAndShowGUI() {
         SimpleFormV4 window = new SimpleFormV4("SimpleFormV4");
         window.addComponents();
-        window.setFrameFeatures();
         window.addMenus();
-        window.setLocationRelativeTo(null);
-        window.setVisible(true);
+        window.setFrameFeatures();
     }
 
     public static void main(String[] args) {
