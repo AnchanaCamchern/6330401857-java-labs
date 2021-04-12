@@ -1,3 +1,13 @@
+/**
+ * This is a PlayerFormV6 program that was inherited from PlayerFormV5 and was an implementation of ItemListener.
+ * This program is the same as PlayerFormV5 and  when the user clicks any radio button of gender,
+   the program will display the message dialog showing the update of gender.
+ *
+ * Author : Anchana  Canchern
+ * Student ID : 633040185-7
+ * Section : 2
+ * Date : 12th April 2021
+ */
 package camchern.anchana.lab10;
 
 import javax.swing.*;

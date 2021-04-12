@@ -1,3 +1,18 @@
+/**
+ * This is a PlayerFormV7 program that was inherited from PlayerFormV6
+   and was an implementation of  ListSelectionListener.
+ * This program is the same as PlayerFormV6.
+ * When the user selects any game in the list, the program will show the selected game.
+ * When the user wants to select more than one item
+   in the list, the user can hold the shift key and then starts to select each item.
+ * The program will display  one item or multiple items of the game list that user's select.
+ *
+ * Author : Anchana  Canchern
+ * Student ID : 633040185-7
+ * Section : 2
+ * Date : 12th April 2021
+ */
+
 package camchern.anchana.lab10;
 
 import javax.swing.*;
@@ -29,13 +44,11 @@ public class PlayerFormV7 extends PlayerFormV6 implements ListSelectionListener 
         // selecting
         StringBuilder message = new StringBuilder();
         if (!isAdjusting) {
-            // Print the names of selected items
             List selectedGames = gamesList.getSelectedValuesList();
-            int numSelected = selectedGames.size();
             for (Object selectedGame : selectedGames) {
                 message.append(selectedGame).append(", ");
             }
-            JOptionPane.showMessageDialog(this, message.toString());
+            JOptionPane.showMessageDialog(this, message.toString()); //  // Print the names of selected items
         }
     }
 

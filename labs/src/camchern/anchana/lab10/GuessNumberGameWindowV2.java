@@ -1,3 +1,17 @@
+/**
+ * This is a GuessNumberGameWindowV2 program that was inherited from GuessNumberGameWindow in lab9 and was an implementation of ActionListener.
+ * User can to keep guessing the number by clicking at the number buttons
+   until the guessed number is the same as the answer number which is randomly generated in the range 1 - 10 .
+ * If the user guess is correct the program will display "Congratulations! " in the result and the user cannot click any number button.
+ * If a guess number is smaller than the answer the program will display "Higher" in the result.
+ * If a guess number is higher than the answer the program will display "Lower" in the result.
+ *
+ * Author : Anchana  Canchern
+ * Student ID : 633040185-7
+ * Section : 2
+ * Date : 12th April 2021
+ */
+
 package camchern.anchana.lab10;
 
 import camchern.anchana.lab9.GuessNumberGameWindow;

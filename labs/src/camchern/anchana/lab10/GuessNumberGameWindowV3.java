@@ -1,3 +1,16 @@
+/**
+ * This is a GuessNumberGameWindowV3 program that was inherited from GuessNumberGameWindowV2 and was an implementation of ActionListener.
+ * This program is the same as GuessNumberGameWindowV2.
+ * Users can click the number button to guess a correct answer three times.
+ * If the user already click a number button in three time and can't get the correct answer,
+   the program will display  "No more Tries" in the result and the user cannot click any number button.
+ *
+ * Author : Anchana  Canchern
+ * Student ID : 633040185-7
+ * Section : 2
+ * Date : 12th April 2021
+ */
+
 package camchern.anchana.lab10;
 
 import javax.swing.*;

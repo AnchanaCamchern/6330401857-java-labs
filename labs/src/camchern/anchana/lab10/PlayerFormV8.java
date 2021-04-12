@@ -1,3 +1,25 @@
+/**
+ * This is a PlayerFormV8 program that was inherited from PlayerFormV7 and was an implementation of ActionListener.
+ * This program is the same as PlayerFormV7.
+ * When the user clicks the menu item Exit, the program will exits.
+ * When the user clicks the menu item Open, the program opens the open file dialog
+ * If the user selects an existing file, the program shows the message dialog
+ displaying the name of the file that is selected to open.
+ * If the user presses Cancel, the program should show the option message “Open command cancelled” .
+ * When the user clicks the menu item Save, the program opens the save file dialog.
+ * If the user selects an existing file, the program shows the message dialog displaying
+   the name of the file that is selected to save.
+ * If the user presses Cancel, the program should show the option message “Save command cancelled”.
+ * This program have Mnemonic keys and accelerator keys of open, save and exit menu items.
+ * This program can change the color of text of name, nationality and date of birth.
+ * This program can change the size of text in note panel.
+ *
+ * Author : Anchana  Canchern
+ * Student ID : 633040185-7
+ * Section : 2
+ * Date : 12th April 2021
+ */
+
 package camchern.anchana.lab10;
 
 import javax.swing.*;

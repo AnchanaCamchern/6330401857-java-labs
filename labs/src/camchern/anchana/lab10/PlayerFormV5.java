@@ -1,3 +1,18 @@
+/**
+ * This is a PlayerFormV5 program that was inherited from PlayerFormV4 and was an implementation of ActionListener.
+ * When the user enters the top three text fields and clicks the Submit button
+   the program will display  values of name, nationality, date of birth, gender and player type.
+ * When the user clicks the Reset button, the program resets the name, nationality,and date of birth text field.
+ * When the user changes any text field (name, nationality, or date of birth)
+   and click Enter, the program displays the message dialog that the text field    is updated.
+ * When the user changes the player type, the program will show the updated player type.
+ *
+ *  Author : Anchana  Canchern
+ * Student ID : 633040185-7
+ * Section : 2
+ * Date : 12th April 2021
+ */
+
 package camchern.anchana.lab10;
 
 import camchern.anchana.lab8.PlayerFormV4;
@@ -7,14 +22,14 @@ import java.util.Objects;
 
 public class PlayerFormV5 extends PlayerFormV4 implements ActionListener {
     protected StringBuffer resultBuffer;
-    protected String username , nation, dateOfBirth, gender, player ;
+    protected String username , nation, dateOfBirth, gender, player ; // set type of variable
 
 
     public PlayerFormV5(String title) {
         super(title);
     }
 
-    protected  void getGender() {
+    protected  void getGender() { // method to get a gender that user select.
 
         if(maleButton.isSelected()){
             gender = " male";
@@ -32,17 +47,17 @@ public class PlayerFormV5 extends PlayerFormV4 implements ActionListener {
         getGender();
         JOptionPane.showMessageDialog(this, username + " has nationality as "
         + nation + ", birthdate as " + dateOfBirth + ", gender as " + gender
-        + ", player type as " + player);
+        + ", player type as " + player); // to display a massage
     }
 
     protected void handleResetButton() {
-        nameTxtArea.setText(" ");
+        nameTxtArea.setText(" "); // set text field to empty.
         nationalityTxtArea.setText(" ");
         dateOfBirthTxtArea.setText(" ");
     }
 
     protected  void handleTextField(JTextField tf) {
-        nameTxtArea.setName("NameText");
+        nameTxtArea.setName("NameText"); // set name of text field
         nationalityTxtArea.setName("NationText");
         dateOfBirthTxtArea.setName("DateText");
         String getText = tf.getName();
@@ -96,7 +111,7 @@ public class PlayerFormV5 extends PlayerFormV4 implements ActionListener {
         nationalityTxtArea.addActionListener(this);
         dateOfBirthTxtArea.addActionListener(this);
         playerTypeCombo.addActionListener(this);
-        nameTxtArea.setText("Adam");
+        nameTxtArea.setText("Adam"); // set text of name text field
         nationalityTxtArea.setText("American");
         dateOfBirthTxtArea.setText("08-04-2001");
     }
