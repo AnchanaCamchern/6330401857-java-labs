@@ -117,24 +117,5 @@ public class PlayerFormV5 extends PlayerFormV4 implements ActionListener {
         });
     }
 }
-/**tf.addKeyListener(new KeyAdapter() {
-@Override
-public void keyPressed(KeyEvent e) {
-if (e.getKeyCode()== KeyEvent.VK_ENTER){
-}
-}
-});
- if (getText.equalsIgnoreCase("NameText")){
- username = nameTxtArea.getText();
- JOptionPane.showMessageDialog(this, "Name is update to " + username);
- }
- if (getText.equalsIgnoreCase("NationText")) {
- nation = nationalityTxtArea.getText();
- JOptionPane.showMessageDialog(this, "Nationality is update to " + nation);
- }
- if (getText.equalsIgnoreCase("DateText")){
- dateOfBirth = dateOfBirthTxtArea.getText();
- JOptionPane.showMessageDialog(this, "DateOfBirth is update to " + dateOfBirth);
- }
- */
+
 

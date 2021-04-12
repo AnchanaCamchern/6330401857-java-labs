@@ -22,7 +22,7 @@ public class PlayerFormV4 extends PlayerFormV3 {
 
     protected JMenu fileMenu, configMenu, subMenuColor, subMenuSize;
     protected JMenuBar menuBar ;
-    protected JMenuItem newItem, openItem, saveItem, exitItem;
+    protected JMenuItem newItem, openItem, saveItem, exitItem, redItem, greenItem, blueItem, sizeItem16, sizeItem20, sizeItem24;
 
     public PlayerFormV4(String title) {
         super(title);
@@ -49,15 +49,21 @@ public class PlayerFormV4 extends PlayerFormV3 {
 
         configMenu.addSeparator();
         subMenuColor = new JMenu("Color");
-        subMenuColor.add(new JMenuItem("Red"));
-        subMenuColor.add(new JMenuItem("Green"));
-        subMenuColor.add(new JMenuItem("Blue"));
+        redItem = (new JMenuItem("Red"));
+        greenItem = (new JMenuItem("Green"));
+        blueItem = (new JMenuItem("Blue"));
+        subMenuColor.add(redItem);
+        subMenuColor.add(greenItem);
+        subMenuColor.add(blueItem);
         configMenu.add(subMenuColor);
 
         subMenuSize = new JMenu("Size");
-        subMenuSize.add(new JMenuItem("16"));
-        subMenuSize.add(new JMenuItem("20"));
-        subMenuSize.add(new JMenuItem("24"));
+        sizeItem16 = (new JMenuItem("16"));
+        sizeItem20 = (new JMenuItem("20"));
+        sizeItem24 = (new JMenuItem("24"));
+        subMenuSize.add(sizeItem16);
+        subMenuSize.add(sizeItem20);
+        subMenuSize.add(sizeItem24);
         configMenu.add(subMenuSize);
 
         menuBar.add(fileMenu);

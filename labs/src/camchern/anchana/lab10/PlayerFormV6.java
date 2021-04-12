@@ -11,19 +11,16 @@ public class PlayerFormV6 extends PlayerFormV5 implements ItemListener {
 
     @Override
     public void itemStateChanged(ItemEvent e) {
-       // JCheckBox source = (JCheckBox) e.getItemSelectable();
-        if (e.getSource()== maleButton){
-            JOptionPane.showMessageDialog(this,"Gender is update to " + maleButton);
-        }if (e.getSource() == femaleButton){
-            JOptionPane.showMessageDialog(this,"Gender is update to " + femaleButton);
+        JRadioButton source = (JRadioButton) e.getSource();
+        if (e.getStateChange() == ItemEvent.SELECTED){
+            JOptionPane.showMessageDialog(this,"Gender is update to " + source.getText());
         }
     }
 
     public void addListener() {
         super.addListener();
-        maleButton.addActionListener(this);
-        femaleButton.addActionListener(this);
-
+        maleButton.addItemListener(this);
+        femaleButton.addItemListener(this);
     }
 
     public static void createAndShowGUI() {

@@ -40,7 +40,7 @@ public class GuessNumberGameWindow extends JFrame{
         resultLabel.setForeground(Color.BLUE); // set color of text on result label.
 
         statusField = new JTextField();
-        statusField = new JTextField("Congratulations!");  // set text of status field
+        statusField.setText("Congratulations!");  // set text of status field
         statusField.setCaretColor(Color.GRAY); // set color of text on status field
         statusField.setFont(new Font(Font.SERIF,BOLD,24)); // set size and font name and font style of text on status field
         statusField.setEditable(false); // cannot to edit
