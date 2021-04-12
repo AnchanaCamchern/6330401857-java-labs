@@ -1,13 +1,11 @@
 package camchern.anchana.lab10;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.util.List;
 
 public class PlayerFormV8 extends PlayerFormV7 implements ActionListener {
     protected JFileChooser fileChooser;
@@ -34,7 +32,7 @@ public class PlayerFormV8 extends PlayerFormV7 implements ActionListener {
             File file = fileChooser.getSelectedFile();
             //This is where a real application would open the file.
             JOptionPane.showMessageDialog(this,
-                    "Open : " + file.getName() + ".");
+                    "Open file " + file.getName() + ".");
         } else if (returnVal == JFileChooser.CANCEL_OPTION) {
             JOptionPane.showMessageDialog(this,
                     "Open command cancelled by user.");
@@ -44,10 +42,9 @@ public class PlayerFormV8 extends PlayerFormV7 implements ActionListener {
     public void handleSaveMenuItem() {
         int save = fileChooser.showSaveDialog(this);
         if (save == JFileChooser.APPROVE_OPTION) {
-            File file = fileChooser.getSelectedFile();
-            //This is where a real application would open the file.
+            File file = fileChooser.getSelectedFile(); //This is where a real application would open the file.
             JOptionPane.showMessageDialog(this,
-                    "Save " + file.getName() + ".");
+                    "Save file " + file.getName() + ".");
         } else if (save== JFileChooser.CANCEL_OPTION) {
             JOptionPane.showMessageDialog(this,
                     "Save command cancelled by user.");
@@ -85,8 +82,8 @@ public class PlayerFormV8 extends PlayerFormV7 implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-
         Object srcObject = e.getSource();
+
         if (srcObject == openItem) {
             handleOpenMenuItem();
         }

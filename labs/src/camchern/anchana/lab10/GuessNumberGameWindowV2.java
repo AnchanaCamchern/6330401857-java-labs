@@ -55,9 +55,9 @@ public class GuessNumberGameWindowV2 extends GuessNumberGameWindow implements Ac
             statusField.setText("Congratulations! ");
             stopButton();
         } else if (correctNum < clickedNumber) {
-            statusField.setText("Higher");
-        } else if (correctNum > clickedNumber) {
             statusField.setText("Lower");
+        } else if (correctNum > clickedNumber) {
+            statusField.setText("Higher");
         }
     }
 

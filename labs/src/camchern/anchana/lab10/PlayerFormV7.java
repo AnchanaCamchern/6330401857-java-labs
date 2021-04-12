@@ -33,7 +33,7 @@ public class PlayerFormV7 extends PlayerFormV6 implements ListSelectionListener 
             List selectedGames = gamesList.getSelectedValuesList();
             int numSelected = selectedGames.size();
             for (Object selectedGame : selectedGames) {
-                message.append(selectedGame).append(" ");
+                message.append(selectedGame).append(", ");
             }
             JOptionPane.showMessageDialog(this, message.toString());
         }

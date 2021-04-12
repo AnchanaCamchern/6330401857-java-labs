@@ -13,7 +13,7 @@ public class PlayerFormV6 extends PlayerFormV5 implements ItemListener {
     public void itemStateChanged(ItemEvent e) {
         JRadioButton source = (JRadioButton) e.getSource();
         if (e.getStateChange() == ItemEvent.SELECTED){
-            JOptionPane.showMessageDialog(this,"Gender is update to " + source.getText());
+            JOptionPane.showMessageDialog(this,"Gender is updated to " + source.getText());
         }
     }
 

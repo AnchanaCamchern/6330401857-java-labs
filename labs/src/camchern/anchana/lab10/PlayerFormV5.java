@@ -49,15 +49,15 @@ public class PlayerFormV5 extends PlayerFormV4 implements ActionListener {
         switch (getText) {
             case "NameText" -> {
                 username = nameTxtArea.getText();
-                JOptionPane.showMessageDialog(this, "Name is update to " + username);
+                JOptionPane.showMessageDialog(this, "Name is updated to " + username);
             }
             case "NationText" -> {
                 nation = nationalityTxtArea.getText();
-                JOptionPane.showMessageDialog(this, "Nationality is update to " + nation);
+                JOptionPane.showMessageDialog(this, "Nationality is updated to " + nation);
             }
             case "DateText" -> {
                 dateOfBirth = dateOfBirthTxtArea.getText();
-                JOptionPane.showMessageDialog(this, "DateOfBirth is update to " + dateOfBirth);
+                JOptionPane.showMessageDialog(this, "Birthdate is updated to " + dateOfBirth);
             }
         }
     }
@@ -66,9 +66,9 @@ public class PlayerFormV5 extends PlayerFormV4 implements ActionListener {
         player = (String) playerTypeCombo.getSelectedItem();
 
         switch (player) {
-            case "Beginner" -> JOptionPane.showMessageDialog(this, "Player type is update to Beginner");
-            case "Professional" -> JOptionPane.showMessageDialog(this, "Player type is update to Professional");
-            case "Amateur" -> JOptionPane.showMessageDialog(this, "Player type is update to Amateur");
+            case "Beginner" -> JOptionPane.showMessageDialog(this, "Player type is updated to Beginner");
+            case "Professional" -> JOptionPane.showMessageDialog(this, "Player type is updated to Professional");
+            case "Amateur" -> JOptionPane.showMessageDialog(this, "Player type is updated to Amateur");
         }
     }
 

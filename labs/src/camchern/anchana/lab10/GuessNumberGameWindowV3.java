@@ -37,9 +37,9 @@ public class GuessNumberGameWindowV3 extends  GuessNumberGameWindowV2 implements
                 statusField.setText("No more Tries ");
                 stopButton();
             } else if (correctNum < clickedNumber) {
-                statusField.setText("Higher");
-            } else if (correctNum > clickedNumber) {
                 statusField.setText("Lower");
+            } else if (correctNum > clickedNumber) {
+                statusField.setText("Higher");
             }
         }
 
