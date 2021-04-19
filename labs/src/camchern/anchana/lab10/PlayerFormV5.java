@@ -32,10 +32,10 @@ public class PlayerFormV5 extends PlayerFormV4 implements ActionListener {
     protected  void getGender() { // method to get a gender that user select.
 
         if(maleButton.isSelected()){
-            gender = " male";
+            gender = "male";
         }
         if (femaleButton.isSelected()){
-            gender = " female";
+            gender = "female";
         }
     }
 
@@ -51,9 +51,9 @@ public class PlayerFormV5 extends PlayerFormV4 implements ActionListener {
     }
 
     protected void handleResetButton() {
-        nameTxtArea.setText(" "); // set text field to empty.
-        nationalityTxtArea.setText(" ");
-        dateOfBirthTxtArea.setText(" ");
+        nameTxtArea.setText(""); // set text field to empty.
+        nationalityTxtArea.setText("");
+        dateOfBirthTxtArea.setText("");
     }
 
     protected  void handleTextField(JTextField tf) {

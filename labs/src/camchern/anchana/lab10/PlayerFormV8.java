@@ -28,6 +28,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class PlayerFormV8 extends PlayerFormV7 implements ActionListener {
     protected JFileChooser fileChooser;
@@ -61,7 +63,7 @@ public class PlayerFormV8 extends PlayerFormV7 implements ActionListener {
         }
     }
 
-    public void handleSaveMenuItem() {
+    public void handleSaveMenuItem()  {
         int save = fileChooser.showSaveDialog(this);
         if (save == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile(); //This is where a real application would open the file.
