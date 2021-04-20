@@ -19,7 +19,7 @@ public class PlayerFormV3 extends  PlayerFormV2 {
     protected String games[] = {"Guess Number Game", "High-Low Game", "Monopoly Game"};
     protected JList gamesList;
     protected JScrollPane gamesScrollPane;
-    protected  JPanel gamesPanel, setGamesLayout;
+    protected JPanel gamesPanel, setGamesLayout;
     protected JLabel gamesLabel;
 
     public PlayerFormV3(String title) {

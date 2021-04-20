@@ -24,6 +24,7 @@ public class PlayerFormV1 extends MySimpleWindow {
     protected JTextField nameTxtArea, nationalityTxtArea, dateOfBirthTxtArea;
     protected JPanel contentPanel, mainPanel, genderPanel, namePanel, nationPanel, dateOfBirthPanel ,maleFemalePanel;
     protected JRadioButton maleButton, femaleButton;
+    protected ButtonGroup genderGrd;
 
     public PlayerFormV1(String title) {
         super(title);
@@ -39,7 +40,7 @@ public class PlayerFormV1 extends MySimpleWindow {
         contentPanel.add(dateOfBirthPanel);
         contentPanel.add(genderPanel);
 
-        ButtonGroup genderGrd = new ButtonGroup(); // ButtonGroup to group two radio buttons together and allow a user to choose only one radio button at a time
+        genderGrd = new ButtonGroup(); // ButtonGroup to group two radio buttons together and allow a user to choose only one radio button at a time
         genderGrd.add(maleButton);
         genderGrd.add(femaleButton);
 

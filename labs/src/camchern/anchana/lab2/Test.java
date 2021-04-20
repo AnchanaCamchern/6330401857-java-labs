@@ -9,7 +9,7 @@ public class Test {
             System.out.println("Enter positive number :");
             int num = scanner.nextInt();
             if (num < 0) {
-                System.out.println("Plese enter positive number");
+                System.out.println("Please enter positive number");
                 System.exit(1);
                 break;
             }

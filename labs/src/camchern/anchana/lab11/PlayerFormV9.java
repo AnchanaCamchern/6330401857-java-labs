@@ -1,3 +1,20 @@
+/**
+ * This is a PlayerFormV9 that was inherited from PlayerFormV8.
+ * The PlayerFormV9 program is the same as PlayerFormV8.
+ * The title of the program is “Player Form V9”.
+ * This program can check for empty fields when the submit button is pressed.
+ * If the name is empty, when the submit button is pressed, the error message will be displayed. The error message is “Name is empty”.
+ * Similarly, if the nationality and the date of birth are empty, the error messages “Nationality is empty” and “Birthdate is empty” respectively.
+ * The program can check if the date of birth is input in the correct format.
+ * If the format in date of birth is incorrect the program will display "Please enter date in the format dd-MM-yyyy such as 31-10-2002".
+ * PlayerFormV9 program can check if the user has selected at least one game. If no game is selected the error message will be displayed as "You have not selected any game.".
+ *
+ * Author : Anchana  Canchern
+ * Student ID : 633040185-7
+ * Section : 2
+ * Date : 19th April 2021
+ */
+
 package camchern.anchana.lab11;
 
 import camchern.anchana.lab10.PlayerFormV8;
